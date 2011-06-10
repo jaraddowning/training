@@ -1,0 +1,8 @@
+<show-page>
+  <main-collection: replace>
+    <table-plus:attendees fields="name, last_name, email_address, trainer">
+      <empty-message:>No attendees for this class</empty-message:>
+      <controls:/>
+    </table-plus>
+  </main-collection:>
+</show-page>

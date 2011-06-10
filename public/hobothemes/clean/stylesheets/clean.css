@@ -203,7 +203,7 @@ form .actions {margin: 30px 0; width: 100%; text-align: center;}
 
 .show-page .content-header {position: relative; border-bottom: 1px dotted #888;}
 .show-page .content-header h1, .new-in-collection-page .content-header h1 {margin-bottom: 2px; margin-right: 70px;}
-.show-page .content-header a.edit-link {position: absolute; top: 30px; right: 0;}
+.show-page .content-header a.edit-link {position: absolute; top: 75px; right: 0;}
 .aside-content .collection {padding-bottom: 10px;}
 
 .content-header .creation-details {font-size: 11px; line-height: 11px;}

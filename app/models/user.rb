@@ -3,11 +3,19 @@ class User < ActiveRecord::Base
   hobo_user_model # Don't put anything above this
 
   fields do
-    name          :string, :required, :unique
-    email_address :email_address, :login => true
+    name          :string, :required
+    last_name     :string, :required
+    username      :string, :required, :unique, :login => true, :name => true
+    email_address :email_address, :required, :unique
     administrator :boolean, :default => false
+    trainer       :boolean, :default => false
     timestamps
   end
+
+  has_many :user_trainings, :dependent => :destroy
+  has_many :training_events, :through => :user_trainings, :accessible => true
+  has_many :training_facilitators, :dependent => :destroy
+  has_many :facilitation_events, :through => :training_facilitators, :source => :training_event, :accessible => true
 
   # This gives admin rights and an :active state to the first sign-up.
   # Just remove it if you don't want that
@@ -33,7 +41,7 @@ class User < ActiveRecord::Base
     create :invite,
            :available_to => "acting_user if acting_user.administrator?",
            :subsite => "admin",
-           :params => [:name, :email_address],
+           :params => [:username, :name, :last_name, :email_address],
            :new_key => true,
            :become => :invited do
        UserMailer.invite(self, lifecycle.key).deliver
@@ -51,6 +59,8 @@ class User < ActiveRecord::Base
 
   end
 
+  children :training_events, :facilitation_events
+
   # --- Permissions --- #
 
   def create_permitted?
@@ -60,7 +70,7 @@ class User < ActiveRecord::Base
 
   def update_permitted?
     acting_user.administrator? ||
-      (acting_user == self && only_changed?(:email_address, :crypted_password,
+      (acting_user == self && only_changed?(:username, :name, :last_name, :crypted_password,
                                             :current_password, :password, :password_confirmation))
     # Note: crypted_password has attr_protected so although it is permitted to change, it cannot be changed
     # directly from a form submission.

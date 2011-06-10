@@ -4,17 +4,16 @@
 
   <content:>
     <header class="content-header">
-      <h1>Welcome to <app-name/></h1>
+      <h1>EMAP Professional Development and Continuing Education WebPortal</h1><br />
       <section class="welcome-message">
-        <h3>Congratulations! Your Hobo Rails App is up and running</h3>
-        <ul>
-          <li>To customise this page: edit app/views/front/index.dryml</li>
-        </ul>
-
+        <h3>Please select "My Training" to update and view your records</h3><br />
+        <p>The Emergency Management Accreditation Program (EMAP) has built a reputation as an organization focused on providing clear, objective, and meaningful standards that relate directly to the specific programmatic features of emergency management here in the US and abroad. As with any program, especially with one that is centered on emergency and disaster preparedness, items such as national trends, real world events, and federal policies change how emergency management programs are implemented, and in turn, how EMAP applies and uses its standards.</p><br />
+        <p>EMAP has taken many positive steps in the development and application of new training initiatives that will benefit both candidate programs as well as our assessors. It is our primary goal to ensure that we have individuals who are well-trained and focused on the Emergency Management Standard by EMAP, the foundation for the majority of our projects and activities.</p><br />
+        <p>EMAP’s training program has a well-established curriculum, but has only minor courses and workshops to support the on-going enhancement of the knowledge and skills our assessor cadre. To this end, it has been determined that EMAP adopt a continuing education program for assessors, team leaders, and those facilitating EMAP-oriented training and workshops. What follows is a basic outline of that program:</p><br />
         <% if User.count == 0 -%>
           <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
           <form with="&this || User.new" without-cancel>
-            <field-list: fields="name, email_address, password, password_confirmation"/>
+            <field-list: fields="username, first_name, last_name, email_address, password, password_confirmation"/>
             <submit: label="Register Administrator"/>
           </form>
         <% end -%>
@@ -24,6 +23,33 @@
     </header>
 
     <section class="content-body">
+      <h2>Continuing Education Policies</h2>
+      <ol type="A" id="assessorreqs">
+        <h3><li>Assessor Criteria for Continuing Education and Enhancement</li></h3>
+          <ol id="assessorreqs">
+            <li>Currently be committed to or have participated in at least one on-site assessment, pre-assessment, or program review within a given calendar year.</li>
+            <li>Participate as a student in 2 or more of the following:</li>
+              <ul id="assessorreqs2">
+                <li>An EMAP sponsored classroom-based course or workshop</li>
+                <li>An EMAP-sponsored online training course</li>
+                <li>An EMAP teleconference training or scheduled training webinar</li>
+              </ul>
+             <li>Successfully complete at least four hours of emergency management / homeland security training from a recognized training provider outside of EMAP. (i.e. Emergency Management Institute, FEMA, NIC, DOA, ODP, colleges, universities, etc.)</li>
+           </ol>
+        <h3><li>Assessor Team Leader Criteria for Continuing Education and Enhancement</li></h3>
+          <ol id="assessorreqs">
+            <li>Currently be committed to or have participated in at least one on-site assessment, pre-assessment, or program review within a given calendar year.</li>
+            <li>Have completed EMAP Assessor Team Leader Training or served as an EMAP Assessor Team Leader within the last 18 months.</li>
+            <li>Fulfill requirements for an EMAP Assessor in A2 and A3 above.</li>
+          </ol>
+        <h3><li>EMAP Training Instructor Criteria for Continuing Education and Enhancement</li></h3>
+          <ol id="assessorreqs">
+            <li>Currently be committed to or have participated in at least one on-site assessment, pre-assessment, or program review within a given calendar year.</li>
+            <li>Assisted in or supported the development of an EMAP training course, workshop or instructional materials.</li>
+            <li>Fulfill requirements for an EMAP Assessor in A2 and A3 above.</li>
+          </ol>
+      </ol>
+
     </section>
   </content:>
 

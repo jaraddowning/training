@@ -4,22 +4,35 @@
 en:
   hello: "Hello world"
 
-#  attributes:
-#    created_at: Created at
-#    updated_at: Updated at
-#
-#  activerecord:
-#    models:
-#      user:
-#        one: User
-#        other: Users
-#    attributes:
-#      user:
-#        name: Name
-#        password: Password
-#        current_password: Current Password
-#        password_confirmation: Password Confirmation
-#        email_address: Email Address
-#    attribute_help:
-#      user:
-#        email_address: We will never share your address with third parties
+  attributes:
+    created_at: Created at
+    updated_at: Updated at
+
+  activerecord:
+    models:
+      my_training:
+        one: My Training
+        other: My Training
+      training_event:
+        one: Training Event
+        other: Training Events
+      training_type:
+        one: Training Type
+        other: Training Types
+      user:
+        one: User
+        other: Users
+    attributes:
+      training_type:
+        training_events: Training Events 
+      user:
+        name: First Name
+        last_name: Last Name
+        username: Login
+        password: Password
+        current_password: Current Password
+        password_confirmation: Password Confirmation
+        email_address: Email Address
+    attribute_help:
+      user:
+        email_address: We will never share your address with third parties

@@ -1,0 +1,113 @@
+body {
+	background: url(../images/webbackground.png) -150px -5px no-repeat;
+	background-color: #4E81B8;	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+div.page-header h1.app-name {
+  text-indent: -10000px;
+  background: url(../images/EMAPlogo.png) 70px 5px no-repeat;
+  padding: 10px 10px 10px 10px; margin: 0;
+  height: 62px;
+}
+
+a#edit-button{
+  position: absolute;
+  left: 8px;
+  top: 33px;
+  border-bottom: none;
+}
+
+button#editbutton{
+  text-transform: uppercase;
+  color: white;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	background-color: #5B8BA0;
+	border: none;
+}
+
+a:link {
+	color: #235;
+	background: none;
+	border-bottom: 1px solid #235;
+}
+
+a:visited {
+	color: #193440;
+	background: none;
+	border-bottom: #193440;
+}
+
+li {
+	margin-left: 0;
+}
+
+td#main-nav-container {
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+td#content-container {
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+.card {
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+.button {
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+
+}
+
+div.aside {
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+#main-nav-container {
+	width: 11%;
+	background: #B6C9DA;
+	border-bottom: #FCFFF5;
+}
+
+.main-nav a {
+	border-bottom: 0px solid #FCFFF5;
+}
+
+.main-nav li.current a {
+	background: #FCFFF5 url(../images/100-B6A9DA-FCFEF5-H.png) repeat-y;
+}
+
+.main-nav a:hover {
+	background: #FCFFF5 url(../images/100-B6A9DA-FCFEF5-H.png) repeat-y;
+}
+
+.front-page .welcome-message {
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	background-color: #EDEDED;
+	background-image: url(../images/50-B6C9DA-EDEDED.png);
+}
+
+a.sn-link {
+	border: none;
+}
+
+div#sn-class {
+	text-align: right;
+} 
+
+font#wb-disclaimer {
+	font-size: 11px;
+}
+
+
+ol#assessorreqs {
+  padding: 0 0 0 30px;
+}

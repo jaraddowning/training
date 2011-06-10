@@ -6,7 +6,27 @@
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
 
-<set-theme name="clean"/>
+<set-theme name="clean-sidemenu"/>
+
+
+<extend tag="card" for="TrainingEvent">
+  <old-card merge>
+    <body:>
+      <view:training_type.name />
+    </body:>
+  </old-card>
+</extend>
+
+<extend tag="card" for="User">
+  <old-card merge>
+    <header: param>
+      <h4><a><view:name />&nbsp;<view:last_name /></a></h4>
+    </header:>
+    <body:>
+      <p><view:email_address /></p>
+    </body:>
+  </old-card>
+</extend>
 
 <extend tag="page">
   <old-page merge>
@@ -17,3 +37,49 @@
     </footer:>
   </old-page>
 </extend>
+
+<def tag="index-page" for="MyTraining">
+  <if test="&current_user.signed_up?"> 
+    <show-page with="&current_user" /> 
+  </if> 
+  <else> 
+    <page title="Home"> 
+      <h1>Get away from here! You don't belong here.</h1>
+    </page> 
+  </else>
+</def>
+
+<extend tag="show-page">
+  <old-show-page merge without-parent-link/>
+</extend>
+
+<extend tag="show-page" for="TrainingEvent">
+  <old-show-page merge>
+    <collection-section:>
+        <h3 param="collection-heading">
+          <ht key="user.collection.heading" count="&this.attendees.count" >
+            <human-collection-name collection="attendees" your/>
+          </ht>
+        </h3>
+      <main-collection:attendees param/>
+    </collection-section:>
+  </old-show-page>
+</extend>
+
+<extend tag="show-page" for="User">
+  <old-show-page merge>
+    <field-list: fields="name, last_name, email_address" />
+  </old-show-page>
+</extend>
+
+<def tag="form" for="TrainingEvent">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="name, date, location, training_type"/><hr /><br />
+    <field-list fields="attendees" /><br /><hr /><br />
+    <field-list fields="facilitators" />
+    <div param="actions">
+      <submit label="#{ht 'training_event.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>

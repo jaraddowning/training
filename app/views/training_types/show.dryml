@@ -1,0 +1,9 @@
+<show-page>
+  <field-list: skip="req_class" />
+  <collection: replace>
+    <table-plus:training_events fields="name, date, location, attendees.count">
+      <empty-message:>No attendees for this class</empty-message:>
+      <controls:/>
+    </table-plus>
+  </collection:>
+</show-page>

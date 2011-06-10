@@ -1,0 +1,8 @@
+<index-page>
+  <collection: replace>
+    <table-plus fields="this, date, location, training_type.name, attendees.count">
+      <empty-message:>No training events match your criteria</empty-message:>
+      <controls:/>
+    </table-plus>
+  </collection:>
+</index-page>
